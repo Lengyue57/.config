@@ -450,11 +450,7 @@ function __fish_git_prompt_informative_status
                     set count $$i
                 end
 
-                if test -n "$info"
-                    set info "$info$color$symbol$count$color_done"
-                else
-                    set info "$color$symbol$count$color_done"
-                end
+                set info "$info$color$symbol$count$color_done"
             end
         end
     end
