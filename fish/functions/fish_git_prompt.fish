@@ -396,7 +396,7 @@ function fish_git_prompt --description "Prompt function for Git"
         set format " (%s)"
     end
 
-    printf "%s$format%s" "$___fish_git_prompt_color_prefix" "$___fish_git_prompt_color_prefix_done$c$b$f$r$p$informative_status$___fish_git_prompt_color_suffix" "$___fish_git_prompt_color_suffix_done"
+    printf "%s$format%s" "$___fish_git_prompt_color_prefix" "$___fish_git_prompt_color_prefix_done $c$b$f$r$p$informative_status$___fish_git_prompt_color_suffix" "$___fish_git_prompt_color_suffix_done"
 end
 
 ### helper functions
@@ -450,7 +450,11 @@ function __fish_git_prompt_informative_status
                     set count $$i
                 end
 
-                set info "$info$color$symbol$count$color_done"
+                if test -n "$info"
+                    set info "$info$color$symbol$count$color_done"
+                else
+                    set info "$color$symbol$count$color_done"
+                end
             end
         end
     end
@@ -576,13 +580,13 @@ end
 function __fish_git_prompt_validate_chars --description "fish_git_prompt helper, checks char variables"
     # cleanstate is only defined with actual informative status.
     contains -- "$__fish_git_prompt_show_informative_status" yes true 1
-    and __fish_git_prompt_set_char __fish_git_prompt_char_cleanstate '󰗠'
+    and __fish_git_prompt_set_char __fish_git_prompt_char_cleanstate '󰧞'
     or __fish_git_prompt_set_char __fish_git_prompt_char_cleanstate ''
 
-    __fish_git_prompt_set_char __fish_git_prompt_char_dirtystate '*' '󰐗'
-    __fish_git_prompt_set_char __fish_git_prompt_char_invalidstate '#' '󰅙'
+    __fish_git_prompt_set_char __fish_git_prompt_char_dirtystate '*' '󰧞'
+    __fish_git_prompt_set_char __fish_git_prompt_char_invalidstate '#' '󰧞'
     __fish_git_prompt_set_char __fish_git_prompt_char_stagedstate '+' '󰧞'
-    __fish_git_prompt_set_char __fish_git_prompt_char_stashstate '$' '⚑'
+    __fish_git_prompt_set_char __fish_git_prompt_char_stashstate '$' '⚑ '
     __fish_git_prompt_set_char __fish_git_prompt_char_stateseparator ' ' '|'
     __fish_git_prompt_set_char __fish_git_prompt_char_untrackedfiles '%' '…'
     __fish_git_prompt_set_char __fish_git_prompt_char_upstream_ahead '>' '↑'
