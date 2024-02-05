@@ -5,7 +5,7 @@ set.fileencodings=utf8,cp936,gb18030,big5
 
 -- 设置字体
 -- set.guifont = "UbuntuMono Nerd Font,Source Han Sans SC,Microsoft YaHei:h10"
-set.guifont = "UbuntuMono Nerd Font,Source Han Sans CN:h10"
+set.guifont = "UbuntuMono Nerd Font,Source Han Sans CN:h9"
 
 -- jk移动时光标下上方保留8行
 set.scrolloff = 8
