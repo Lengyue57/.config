@@ -576,7 +576,7 @@ end
 function __fish_git_prompt_validate_chars --description "fish_git_prompt helper, checks char variables"
     # cleanstate is only defined with actual informative status.
     contains -- "$__fish_git_prompt_show_informative_status" yes true 1
-    and __fish_git_prompt_set_char __fish_git_prompt_char_cleanstate '󰧞'
+    and __fish_git_prompt_set_char __fish_git_prompt_char_cleanstate '󰗠 '
     or __fish_git_prompt_set_char __fish_git_prompt_char_cleanstate ''
 
     __fish_git_prompt_set_char __fish_git_prompt_char_dirtystate '*' '󰧞'
