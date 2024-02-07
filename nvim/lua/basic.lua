@@ -66,7 +66,7 @@ set.whichwrap = 'b,s,<,>,[,],h,l'
 set.hidden = true
 
 -- 鼠标支持
-set.mouse = ""
+set.mouse = "a"
 
 -- 禁止创建备份文件
 set.backup = false

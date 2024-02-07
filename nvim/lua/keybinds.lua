@@ -43,8 +43,8 @@ keymap('n', '<A-Down>', '<C-w><Down>', opt)
 keymap('n', '<A-Up>', '<C-w><Up>', opt)
 keymap('n', '<A-Right>', '<C-w><Right>', opt)
 
-keymap('n', '<A-S>', '<C-w>s', opt)
-keymap('n', '<A-V>', '<C-w>v', opt)
+keymap('n', '<A-">', '<C-w>s', opt)
+keymap('n', '<A-|>', '<C-w>v', opt)
 
 keymap('n', '<A-<>', '<C-w><', opt)
 keymap('n', '<A->>', '<C-w>>', opt)
