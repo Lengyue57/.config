@@ -5,7 +5,7 @@ set.fileencodings=utf8,cp936,gb18030,big5
 
 -- 设置字体
 -- set.guifont = "UbuntuMono Nerd Font,Source Han Sans SC,Microsoft YaHei:h10"
-set.guifont = "UbuntuMono Nerd Font,Source Han Sans CN:h9"
+set.guifont = {"UbuntuMono Nerd Font", "Source Han Sans CN", ":h9"}
 
 -- jk移动时光标下上方保留8行
 set.scrolloff = 8
@@ -88,7 +88,7 @@ set.completeopt = "menu,menuone,noselect,noinsert"
 
 -- 样式
 set.background = "dark"
-set.termguicolors = false
+set.termguicolors = true
 
 -- 不可见字符的显示，这里只把空格显示为一个点
 set.list = true
@@ -103,5 +103,3 @@ set.pumheight = 10
 
 -- always show tabline
 set.showtabline = 2
-
---set.encoding = utf-8
