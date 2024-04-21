@@ -12,8 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  {"Morhetz/gruvbox"},
-  {"Mofiqul/vscode.nvim"},
   {"neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer"},
   {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"},
   {"alohaia/fcitx.nvim",

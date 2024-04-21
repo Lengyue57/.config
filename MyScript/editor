@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+if test -n "$XDG_CURRENT_DESKTOP"
+then
+  # If graphic
+  neovide $*
+else
+  # If not graphic
+  nvim $*
+fi

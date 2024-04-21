@@ -1,0 +1,8 @@
+#!/usr/bin/sh
+if [ $# == 0 ]
+then
+  echo "0"
+  wezterm start tmux
+else
+  wezterm start tmux -c $*
+fi
