@@ -14,7 +14,9 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   {"neovim/nvim-lspconfig", "williamboman/nvim-lsp-installer"},
   {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"},
-  {"alohaia/fcitx.nvim",
+
+  -- fcitx 自动切换输入法
+  (vim.fn.has("win64") == 0) and {"alohaia/fcitx.nvim",
     config = function()
       require("fcitx") {
         enable = {
@@ -27,5 +29,5 @@ require("lazy").setup({
         }
       }
     end
-  },
+  } or nil,
 })
