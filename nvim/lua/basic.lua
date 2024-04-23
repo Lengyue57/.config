@@ -1,11 +1,30 @@
 -- utf8
-set.encoding = 'UTF-8'
-set.fileencoding = 'utf-8'
+set.encoding = "UTF-8"
+set.fileencoding = "UTF-8"
 set.fileencodings=utf8,cp936,gb18030,big5
 
--- 设置字体
--- set.guifont = "UbuntuMono Nerd Font,Source Han Sans SC,Microsoft YaHei:h10"
-set.guifont = {"UbuntuMono Nerd Font", "Source Han Sans CN", ":h9"}
+if vim.g.neovide then
+  -- 设置字体
+  if vim.fn.has("win64") then
+    print("windows")
+    set.guifont = {
+      "MonacoMono",
+      "UbuntuMono Nerd Font",
+      "Source Han Sans SC",
+      ":h10"
+    }
+  else
+    set.guifont = {
+      "MonacoMono",
+      "UbuntuMono Nerd Font",
+      "Source Han Sans CN",
+      ":h10"
+    }
+  end
+
+  -- 自动隐藏光标
+  vim.g.neovide_hide_mouse_when_typing = true
+end
 
 -- jk移动时光标下上方保留8行
 set.scrolloff = 8
@@ -57,10 +76,10 @@ set.cmdheight = 1
 set.autoread = true
 
 -- 折行
-set.wrap = true
+set.wrap = false
 
 -- 行结尾可以跳到下一行
-set.whichwrap = 'b,s,<,>,[,],h,l'
+set.whichwrap = '<,>,[,],h,l'
 
 -- 允许隐藏被修改过的buffer
 set.hidden = true
@@ -73,7 +92,7 @@ set.backup = false
 set.writebackup = false
 set.swapfile = false
 
--- smaller updatetime 
+-- smaller updatetime
 set.updatetime = 300
 
 -- 等待mappings
@@ -92,7 +111,7 @@ set.termguicolors = true
 
 -- 不可见字符的显示，这里只把空格显示为一个点
 set.list = true
-set.listchars = "space:·"
+set.listchars = "trail:·"
 
 -- 补全增强
 set.wildmenu = true

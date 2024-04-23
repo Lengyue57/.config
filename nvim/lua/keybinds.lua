@@ -6,13 +6,26 @@ vim.g.maplocalleader="<space>"
 
 keymap("t", "<ESC>", "<C-\\><C-n>", opt)
 
+-- 跳转与滚动
 keymap("n", "<C-e>", "<C-e><C-e><C-e>", opt)
 keymap("n", "<C-y>", "<C-y><C-y><C-y>", opt)
+keymap("n", "<C-u>", "<C-u>zz", opt)
+keymap("n", "<C-d>", "<C-d>zz", opt)
+keymap("n", "G", "Gzz", opt)
+keymap("n", "{", "{zz", opt)
+keymap("n", "}", "}zz", opt)
 
 keymap("",  "j", "gj", opt)
 keymap("",  "k", "gk", opt)
-keymap("i", "<Up>",   "<C-o>g<Up>", opt)
-keymap("i", "<Down>", "<C-o>g<Down>", opt)
+keymap("", "<Up>",   "g<Up>", opt)
+keymap("", "<Down>", "g<Down>", opt)
+
+keymap("i", "<A-h>", "<C-o>h", { silent = true })
+keymap("i", "<A-j>", "<C-o>j", { silent = true })
+keymap("i", "<A-k>", "<C-o>k", { silent = true })
+keymap("i", "<A-l>", "<C-o>l", { silent = true })
+keymap("i", "<Up>",   "<C-o><Up>", { silent = true })
+keymap("i", "<Down>", "<C-o><Down>", { silent = true })
 
 keymap("n",  "n", "gn", opt)
 keymap("n",  "N", "gN", opt)
@@ -26,11 +39,9 @@ keymap("n", "<A-\">", "<C-w>s", opt)
 keymap("n", "<A-|>",  "<C-w>v", opt)
 
 -- 关闭窗格
-keymap("n", "<A-q>", "<C-w>q", opt)
-keymap("n", "<A-c>", "<C-w>c", opt)
+keymap("n", "<A-c>", "<C-w>q", opt)
 
 -- 窗格跳转
-keymap("n", "<A-w>", "<C-w>w", opt)
 keymap("n", "<A-h>", "<C-w>h", opt)
 keymap("n", "<A-j>", "<C-w>j", opt)
 keymap("n", "<A-k>", "<C-w>k", opt)
