@@ -2,7 +2,7 @@ lua set = vim.opt
 lua require("basic")
 lua require("keybinds")
 lua require("plugins")
-lua require("lsp/setup")
+lua require("lsp")
 
 " 插件配置
 lua require("nvim-treesitter.install").prefer_git = true
