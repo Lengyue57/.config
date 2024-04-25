@@ -1,12 +1,13 @@
+local set = vim.opt
+
 -- utf8
 set.encoding = "UTF-8"
 set.fileencoding = "UTF-8"
-set.fileencodings=utf8,cp936,gb18030,big5
+set.fileencodings= "utf8,cp936,gb18030,big5"
 
 if vim.g.neovide then
   -- 设置字体
   if vim.fn.has("win64") then
-    print("windows")
     set.guifont = {
       "MonacoMono",
       "UbuntuMono Nerd Font",
@@ -38,7 +39,7 @@ set.relativenumber = true
 set.cursorline = true
 
 -- 显示左侧图标指示列
-set.signcolumn = 'yes'
+set.signcolumn = 'number'
 
 -- 右侧参考线，超过表示代码太长了，考虑换行
 set.colorcolumn = '80'
