@@ -5,6 +5,7 @@ vim.g.mapleader="<space>"
 vim.g.maplocalleader="<space>"
 
 keymap("t", "<ESC>", "<C-\\><C-n>", opt)
+keymap("", "<F8>", "<CMD>noh<CR>", opt)
 
 -- 跳转与滚动
 keymap("n", "<C-e>", "<C-e><C-e><C-e>", opt)
@@ -15,8 +16,8 @@ keymap("n", "G", "Gzz", opt)
 keymap("n", "{", "{zz", opt)
 keymap("n", "}", "}zz", opt)
 
-keymap("",  "j", "gj", opt)
-keymap("",  "k", "gk", opt)
+keymap("", "j", "gj", opt)
+keymap("", "k", "gk", opt)
 keymap("", "<Up>",   "g<Up>", opt)
 keymap("", "<Down>", "g<Down>", opt)
 
@@ -57,6 +58,10 @@ keymap("n", "<A-H>", "<C-w>H", opt)
 keymap("n", "<A-J>", "<C-w>J", opt)
 keymap("n", "<A-K>", "<C-w>K", opt)
 keymap("n", "<A-L>", "<C-w>L", opt)
+keymap("n", "<A-S-Up>", "<C-w>K", opt)
+keymap("n", "<A-S-Down>", "<C-w>J", opt)
+keymap("n", "<A-S-Left>", "<C-w>H", opt)
+keymap("n", "<A-S-Right>", "<C-w>L", opt)
 
 -- 调整窗格大小
 keymap("n", "<A-<>", "<C-w><", opt)
