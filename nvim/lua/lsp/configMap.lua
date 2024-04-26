@@ -1,3 +1,3 @@
 return {
-  clangd = require("lsp/configs/cpp"),
+  clangd = require("lsp/configs/clangd"),
 }
