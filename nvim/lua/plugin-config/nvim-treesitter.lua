@@ -4,6 +4,11 @@ require("nvim-treesitter.configs").setup {
     "vim",
     "xml",
     "lua",
+    "git_config",
+    "git_rebase",
+    "gitattributes",
+    "gitcommit",
+    "gitignore",
     "c",
     "cpp",
     "cmake"
@@ -14,8 +19,3 @@ require("nvim-treesitter.configs").setup {
     additional_vim_regex_highlighting = false
   },
 }
-
-vim.wo.foldmethod = "expr"
-vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
-
-vim.wo.foldlevel = 99
