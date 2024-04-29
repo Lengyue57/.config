@@ -1,12 +1,12 @@
 if status is-interactive
   # Commands to run in interactive sessions can go here
 
-  if test -n "$CONFIG_INITED"
+  if test -z "$CONFIG_INITED"
     # init
 
     # envs
     set -g -x CONFIG_DIR ~/.config
-    set -g -x MY_SCRIPT ../MyScript
+    set -g -x MY_SCRIPT $CONFIG_DIR/MyScript
 
     set -g -x CONFIG_INITED TRUE
   end
