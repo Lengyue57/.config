@@ -1,5 +1,5 @@
 #!/usr/bin/sh
-if test -n "$XDG_CURRENT_DESKTOP"
+if test -n "$IS_GRAPHIC"
 then
   # If graphic
   neovide $*
