@@ -39,7 +39,7 @@ set.relativenumber = true
 set.cursorline = true
 
 -- 显示左侧图标指示列
-set.signcolumn = 'number'
+set.signcolumn = 'yes'
 
 -- 右侧参考线，超过表示代码太长了，考虑换行
 set.colorcolumn = '80'
@@ -68,7 +68,7 @@ set.hlsearch = true
 set.incsearch = true
 
 -- 使用增强状态栏后依然需要 vim 的模式提示
-set.showmode = true
+set.showmode = false
 
 -- 命令行高为1
 set.cmdheight = 1
