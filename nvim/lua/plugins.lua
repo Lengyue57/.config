@@ -11,13 +11,20 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
+require("lazy").setup {
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    config = function ()
+      require("plugin-config/lualine")
+    end
+  },
   -- 代码折叠
   {
     'kevinhwang91/nvim-ufo',
     dependencies = 'kevinhwang91/promise-async',
     config = function()
-      require("plugin-config.nvim-ufo")
+      require("plugin-config/nvim-ufo")
     end
   },
   -- 语法高亮
@@ -54,4 +61,4 @@ require("lazy").setup({
       }
     end
   } or nil,
-})
+}

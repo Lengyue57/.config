@@ -8,11 +8,11 @@ keymap("t", "<ESC>", "<C-\\><C-n>", opt)
 keymap("", "<F8>", "<CMD>noh<CR>", opt)
 
 -- 跳转与滚动
-keymap("n", "<C-e>", "<C-e><C-e><C-e>", opt)
-keymap("n", "<C-y>", "<C-y><C-y><C-y>", opt)
-keymap("n", "<C-u>", "<C-u>zz", opt)
-keymap("n", "<C-d>", "<C-d>zz", opt)
-keymap("n", "G", "Gzz", opt)
+keymap("n", "<C-e>", "<C-e><C-e><C-e>0", opt)
+keymap("n", "<C-y>", "<C-y><C-y><C-y>0", opt)
+keymap("n", "<C-u>", "<C-u>zz0", opt)
+keymap("n", "<C-d>", "<C-d>zz0", opt)
+keymap("n", "G", "Gzz0", opt)
 keymap("n", "{", "{zz", opt)
 keymap("n", "}", "}zz", opt)
 

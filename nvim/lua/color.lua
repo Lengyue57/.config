@@ -17,6 +17,8 @@ hi(0, "LineNr", { fg = silver })
 hi(0, "CursorLine", { bg = gray })
 hi(0, "CursorLineNr", { fg = fg })
 
+hi(0, "SignColumn", {})
+
 hi(0, "StatusLine", { bg = gray })
 hi(0, "StatusLineNC", { bg = gray })
 
