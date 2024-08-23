@@ -5,8 +5,8 @@ if status is-interactive
     # init
 
     # envs
-    set -g -x CONFIG_DIR ~/.config
-    set -g -x MY_SCRIPT $CONFIG_DIR/MyScript
+    set -g -x XDG_CONFIG_HOME ~/.config
+    set -g -x MY_SCRIPT $XDG_CONFIG_HOME/MyScript
 
     set -g -x CONFIG_INITED TRUE
   end
