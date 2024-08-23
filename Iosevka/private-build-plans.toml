@@ -1,0 +1,173 @@
+### See https://github.com/be5invis/Iosevka/blob/master/doc/custom-build.md for comprehensive
+### documentation of the options in this file
+
+[buildPlans.IosevkaSlab]
+family = "Iosevka Slab"
+spacing = "normal"           # Optional; Values: `normal`, `term`, `fontconfig-mono`, or `fixed`
+serifs = "slab"                  # Optional; Values: `sans` or `slab`
+exportGlyphNames = false     # Set this to true for ligature support in Kitty (increased file size)
+noLigation = false           # Set this to true to disable ligation support
+
+webfontFormats = ['TTF']
+
+################################################################################
+# Configure variants
+
+# Optional; Whether to inherit a `ss##` variant
+# [buildPlans.IosevkaSlab.variants]
+# inherits = "ss14"
+
+# Optional; Configure single character's variant
+[buildPlans.IosevkaSlab.variants.design]
+cv01 = 3 # 1
+cv02 = 4 # 2
+cv03 = 2 # 3
+cv04 = 6 # 4
+cv05 = 2 # 5
+cv06 = 3 # 6
+cv07 = 3 # 7
+cv08 = 1 # 8
+cv09 = 3 # 9
+cv10 = 2 # 0
+
+cv36 = 13 # a
+
+VSAB = 9 # *
+VSAG = 1 # ( )
+VSAH = 1 # { }
+VSAM = 1 # $
+VSAN = 1 # ¢
+
+# Optional; Configure single character's variant for Italic only; Overrides [design]
+[buildPlans.IosevkaSlab.variants.italic]
+cv36 = 14 # a
+cv39 = 6  # d
+cv46 = 4  # k
+cv50 = 2  # p
+cv51 = 7  # q
+cv55 = 4  # u
+cv58 = 9  # x
+cv60 = 10 # z
+
+# End variant section
+################################################################################
+
+################################################################################
+# Override default building weights
+# When buildPlans.<plan name>.weights is absent, all weights would built and mapped to
+# default values.
+# [buildPlans.IosevkaSlab.weights.Thin]
+# shape = 100
+# menu  = 100
+# css   = 100
+
+# [buildPlans.IosevkaSlab.weights.ExtraLight]
+# shape = 200
+# menu  = 200
+# css   = 200
+
+# [buildPlans.IosevkaSlab.weights.Light]
+# shape = 300
+# menu  = 300
+# css   = 300
+
+[buildPlans.IosevkaSlab.weights.Regular]
+shape = 400  # Weight for glyph shapes.
+menu  = 400  # Weight for the font's names.
+css   = 400  # Weight for webfont CSS.
+
+# [buildPlans.IosevkaSlab.weights.Medium]
+# shape = 500
+# menu  = 500
+# css   = 500
+
+# [buildPlans.IosevkaSlab.weights.SemiBold]
+# shape = 600
+# menu  = 600
+# css   = 600
+
+[buildPlans.IosevkaSlab.weights.Bold]
+shape = 700
+menu  = 700
+css   = 700
+
+# [buildPlans.IosevkaSlab.weights.ExtraBold]
+# shape = 800
+# menu  = 800
+# css   = 800
+
+# [buildPlans.IosevkaSlab.weights.Black]
+# shape = 900
+# menu  = 900
+# css   = 900
+
+# End weight section
+################################################################################
+
+################################################################################
+# Override default building slope sets
+# When this section is absent, all slopes would be built.
+
+[buildPlans.IosevkaSlab.slopes.Upright]
+angle = 0             # Angle in degrees. Valid range [0, 15]
+shape = "upright"     # Slope grade used for shape selection.  `upright` | `oblique` | `italic`
+menu  = "upright"     # Slope grade used for naming.           `upright` | `oblique` | `italic`
+css   = "normal"      # Slope grade used for webfont CSS.      `normal`  | `oblique` | `italic`
+
+[buildPlans.IosevkaSlab.slopes.Oblique]
+angle = 9.4
+shape = "oblique"
+menu  = "oblique"
+css   = "oblique"
+
+[buildPlans.IosevkaSlab.slopes.Italic]
+angle = 9.4
+shape = "italic"
+menu  = "italic"
+css   = "italic"
+
+# End slope section
+################################################################################
+
+################################################################################
+# Override default building widths
+# When buildPlans.<plan name>.widths is absent, all widths would built and mapped to
+# default values.
+# IMPORTANT : Currently "shape" property only supports numbers between 434 and 664 (inclusive),
+#             while "menu" only supports integers between 1 and 9 (inclusive).
+#             The "shape" parameter specifies the unit width, measured in 1/1000 em. The glyphs'
+#             width are equal to, or a simple multiple of the unit width.
+#             If you decide to use custom widths you have to define all the widths you plan to use,
+#             otherwise they will not be built.
+
+[buildPlans.IosevkaSlab.widths.Normal]
+shape = 500        # Unit Width, measured in 1/1000 em.
+menu  = 5          # Width grade for the font's names.
+css   = "normal"   # "font-stretch' property of webfont CSS.
+
+# [buildPlans.IosevkaSlab.widths.Extended]
+# shape = 600
+# menu  = 7
+# css   = "expanded"
+
+# End width section
+################################################################################
+
+################################################################################
+# Character Exclusion
+# Specify character ranges in the section below to exclude certain characters from the font being
+# built. Remove this section when this feature is not needed.
+
+[buildPlans.IosevkaSlab.excludeChars]
+ranges = [
+  [8592, 8703],
+  [9728, 10101],
+]
+
+# End character exclusion
+################################################################################
+
+################################################################################
+# Metric overrides
+# Certain metrics like line height (leading) could be overridden in your build plan file.
+# Edit the values to change the metrics. Remove this section when overriding is not needed.
