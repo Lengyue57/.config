@@ -4,6 +4,6 @@ require("basic")
 require("keybinds")
 
 vim.g.codedark_term256 = 1
-vim.cmd("set background=dark")
+vim.opt.background = "dark"
 
 require("color")

@@ -9,14 +9,15 @@ if vim.g.neovide then
   -- 设置字体
   if vim.fn.has("win64") then
     set.guifont = {
-      "MonacoMono",
+      "Iosevka Slab",
+      "IosevkaTermSlab NF",
       "UbuntuMono Nerd Font",
       "Source Han Sans SC",
       ":h10"
     }
   else
     set.guifont = {
-      "MonacoMono",
+      "Iosevka Slab",
       "UbuntuMono Nerd Font",
       "Source Han Sans CN",
       ":h10"
