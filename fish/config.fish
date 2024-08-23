@@ -9,6 +9,8 @@ if status is-interactive
     set -g -x MY_SCRIPT $XDG_CONFIG_HOME/MyScript
 
     set -g -x CONFIG_INITED TRUE
+
+    set -g -x EDITOR editor
   end
 
   if test -n "$XDG_CURRENT_DESKTOP" || test -n "$WSL_DISTRO_NAME"
