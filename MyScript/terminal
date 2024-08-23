@@ -1,8 +1,7 @@
 #!/usr/bin/sh
 if [ $# == 0 ]
 then
-  echo "0"
-  wezterm start tmux
+  wezterm  start --always-new-process "tmux"
 else
-  wezterm start tmux -c $*
+  wezterm start --always-new-process "tmux -c $*"
 fi
