@@ -1,11 +1,13 @@
 local keymap = vim.api.nvim_set_keymap
 local opt = { noremap = true, silent = true }
 
-vim.g.mapleader="<space>"
-vim.g.maplocalleader="<space>"
+vim.g.mapleader=" "
+vim.g.maplocalleader="\\"
 
 keymap("t", "<ESC>", "<C-\\><C-n>", opt)
 keymap("", "<F8>", "<CMD>noh<CR>", opt)
+keymap("", "<C-c>", "<C-\\><C-n>", opt)
+keymap("!", "<C-c>", "<C-\\><C-n>", opt)
 
 -- 跳转与滚动
 keymap("n", "<C-e>", "<C-e><C-e><C-e>0", opt)
@@ -27,20 +29,22 @@ keymap("i", "<A-k>", "<C-o>k", { silent = true })
 keymap("i", "<A-l>", "<C-o>l", { silent = true })
 keymap("i", "<Up>",   "<C-o><Up>", { silent = true })
 keymap("i", "<Down>", "<C-o><Down>", { silent = true })
-
-keymap("n",  "n", "gn", opt)
-keymap("n",  "N", "gN", opt)
-keymap("v",  "n", "<ESC>ngn", opt)
-keymap("v",  "N", "<ESC>NgN", opt)
-keymap("o",  "n", "gn", opt)
-keymap("o",  "N", "gN", opt)
+keymap("i", "<Left>", "<C-o><Left>", { silent = true })
+keymap("i", "<Right>", "<C-o><Right>", { silent = true })
+keymap("i", "<A-w>", "<C-o>w", opt)
+keymap("i", "<A-W)", "<C-o>W", opt)
+keymap("i", "<A-b>", "<C-o>b", opt)
+keymap("i", "<A-B>", "<C-o>B", opt)
+keymap("i", "<A-e>", "<C-o>e", opt)
+keymap("i", "<A-E>", "<C-o>E", opt)
+keymap("i", "<A-a>", "<C-o>A", opt)
 
 -- 窗格分割
 keymap("n", "<A-\">", "<C-w>s", opt)
 keymap("n", "<A-|>",  "<C-w>v", opt)
 
 -- 关闭窗格
-keymap("n", "<A-c>", "<C-w>q", opt)
+keymap("n", "<A-w>", "<C-w>q", opt)
 
 -- 窗格跳转
 keymap("n", "<A-h>", "<C-w>h", opt)
