@@ -1,11 +1,4 @@
 return {
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = 'nvim-tree/nvim-web-devicons',
-    config = function ()
-      require("plugin-config/lualine")
-    end
-  },
   -- 代码折叠
   -- {
   --   'kevinhwang91/nvim-ufo',

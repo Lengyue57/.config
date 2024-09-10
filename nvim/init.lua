@@ -1,5 +1,4 @@
 require("plugin")
-require("lsp")
 require("basic")
 require("keybinds")
 
