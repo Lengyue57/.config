@@ -7,14 +7,6 @@ return {
   --     require("plugin-config/nvim-ufo")
   --   end
   -- },
-  -- 语法高亮
-  {
-    "nvim-treesitter/nvim-treesitter",
-    config = function()
-      require("nvim-treesitter.install").prefer_git = true
-      require("plugin-config/nvim-treesitter")
-    end,
-  },
 
   -- 自动补全
   {"hrsh7th/cmp-nvim-lsp"},
