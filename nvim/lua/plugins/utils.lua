@@ -8,9 +8,6 @@ return {
   --   end
   -- },
 
-  -- 自动补全
-  {"hrsh7th/cmp-nvim-lsp"},
-  {"hrsh7th/nvim-cmp"},
 
   -- fcitx 自动切换输入法
   (vim.fn.has("win64") == 0) and {"alohaia/fcitx.nvim",
