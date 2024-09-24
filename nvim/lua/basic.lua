@@ -43,7 +43,7 @@ set.cursorline = true
 set.signcolumn = 'yes'
 
 -- 右侧参考线，超过表示代码太长了，考虑换行
-set.colorcolumn = '80'
+set.colorcolumn = '81'
 
 -- 缩进2个空格等于一个Tab
 set.tabstop = 2

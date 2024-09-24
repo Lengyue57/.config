@@ -9,7 +9,7 @@ keymap("", "<F8>", "<CMD>noh<CR>", opt)
 keymap("", "<C-c>", "<C-\\><C-n>", opt)
 keymap("!", "<C-c>", "<C-\\><C-n>", opt)
 
--- 跳转与滚动
+-- 移动
 keymap("n", "<C-e>", "<C-e><C-e><C-e>0", opt)
 keymap("n", "<C-y>", "<C-y><C-y><C-y>0", opt)
 keymap("n", "<C-u>", "<C-u>zz0", opt)
@@ -23,21 +23,48 @@ keymap("", "k", "gk", opt)
 keymap("", "<Up>",   "g<Up>", opt)
 keymap("", "<Down>", "g<Down>", opt)
 
-keymap("i", "<A-h>", "<C-o>h", { silent = true })
-keymap("i", "<A-j>", "<C-o>j", { silent = true })
-keymap("i", "<A-k>", "<C-o>k", { silent = true })
-keymap("i", "<A-l>", "<C-o>l", { silent = true })
+keymap("t", "<A-h>", "<Left>", { silent = true })
+keymap("t", "<A-j>", "<Down>", { silent = true })
+keymap("t", "<A-k>", "<Up>", { silent = true })
+keymap("t", "<A-l>", "<Right>", { silent = true })
+keymap("t", "<A-Up>",   "<Up>", { silent = true })
+keymap("t", "<A-Down>", "<Down>", { silent = true })
+keymap("t", "<A-Left>", "<Left>", { silent = true })
+keymap("t", "<A-Right>", "<Right>", { silent = true })
+
 keymap("i", "<Up>",   "<C-o><Up>", { silent = true })
 keymap("i", "<Down>", "<C-o><Down>", { silent = true })
-keymap("i", "<Left>", "<C-o><Left>", { silent = true })
-keymap("i", "<Right>", "<C-o><Right>", { silent = true })
+keymap("i", "<A-h>", "<Left>", { silent = true })
+keymap("i", "<A-j>", "<Down>", { silent = true })
+keymap("i", "<A-k>", "<Up>", { silent = true })
+keymap("i", "<A-l>", "<Right>", { silent = true })
+keymap("i", "<A-Up>",   "<Up>", { silent = true })
+keymap("i", "<A-Down>", "<Down>", { silent = true })
+keymap("i", "<A-Left>", "<Left>", { silent = true })
+keymap("i", "<A-Right>", "<Right>", { silent = true })
 keymap("i", "<A-w>", "<C-o>w", opt)
 keymap("i", "<A-W)", "<C-o>W", opt)
 keymap("i", "<A-b>", "<C-o>b", opt)
 keymap("i", "<A-B>", "<C-o>B", opt)
 keymap("i", "<A-e>", "<C-o>e", opt)
 keymap("i", "<A-E>", "<C-o>E", opt)
+
+keymap("i", "<A-/>", "<C-o>/", opt)
+keymap("i", "<A-?>", "<C-o>?", opt)
+
+-- 搜索不显示提示
+-- keymap("n", "/", "/", { noremap = true, silent = true })
+-- keymap("n", "?", "?", { noremap = true, silent = true })
+
+keymap("n", "u", "<CMD>undo<CR>", opt)
+keymap("n", "U", "<CMD>redo<CR>", opt)
+
+
 keymap("i", "<A-a>", "<C-o>A", opt)
+keymap("i", "<A-i>", "<C-o>I", opt)
+
+keymap("i", "<A-d>", "<C-o>d", opt)
+keymap("i", "<A-D>", "<C-o>D", opt)
 
 -- 窗格分割
 keymap("n", "<A-\">", "<C-w>s", opt)
