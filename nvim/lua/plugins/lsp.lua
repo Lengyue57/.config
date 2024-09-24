@@ -1,4 +1,6 @@
-local mason_path = vim.fn.stdpath("data") .. "/mason"
+-- LSP 配置
+
+local mason_registry_path = vim.fn.stdpath("data") .. "/mason/packages"
 
 local ensure_installed_servers = {
   "vimls",
@@ -8,56 +10,64 @@ local ensure_installed_servers = {
 -- 安装列表
 -- https://github.com/williamboman/nvim-lsp-installer#available-lsps
 local servers = {
-  clangd = {}, -- 一般随着 llvm 一起安装，不需要 mason
-  volar = {
+  ts_ls = {
     init_options = {
-      typescript = {
-        tsdk = mason_path .. "/packages/vue-language-server/node_modules/typescript/lib",
-      },
-    },
-    filetypes = { "vue", "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
-  },
-}
-
-return {
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ui = {
-        border = "rounded",
-        icons = {
-          package_installed = "󰗠",
-          package_pending = "󰅙",
-          package_uninstalled = "󰳟",
+      plugins = {
+        {
+          name = "@vue/typescript-plugin",
+          location = mason_registry_path .. "vue-language-server"
+          .. "/node_modules/@vue/language-server"
+          .. "/node_modules/@vue/typescript-plugin",
+          languages = { "javascript", "javascriptreact", "typescript", "typescriptreact", "typescript.tsx" },
         },
       },
     },
+    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
   },
-  {
+}
+
+local not_trusteeship_servers = {
+  clangd = {}, -- 一般随 llvm 一起安装，不需要 nvim 下载
+}
+
+return {
+  "neovim/nvim-lspconfig",
+  dependencies = {
     "williamboman/mason-lspconfig.nvim",
-    dependencies = "williamboman/mason.nvim",
+    dependencies = {
+      "williamboman/mason.nvim",
+      opts = {
+        ui = {
+          border = "rounded",
+          icons = {
+            package_installed = "󰗠",
+            package_pending = "󰅙",
+            package_uninstalled = "󰳟",
+          },
+        },
+      },
+    },
     opts = { ensure_installed = ensure_installed_servers, },
   },
-  {
-    "neovim/nvim-lspconfig",
-    dependencies = "williamboman/mason-lspconfig.nvim",
-    config = function()
-      local lspconfig = require("lspconfig")
+  config = function()
+    local lspconfig = require("lspconfig")
 
-      for name, config in pairs(servers) do
-        if config ~= nil and type(config) == "table" then
-          lspconfig[name].setup(config)
+    -- 设置服务器
+    for name, config in pairs(not_trusteeship_servers) do
+      if config ~= nil and type(config) == "table" then
+        lspconfig[name].setup(config)
+      end
+    end
+
+    -- 默认设置
+    require("mason-lspconfig").setup_handlers {
+      function(server)
+        if servers[server] ~= nil then
+          lspconfig[server].setup(servers[server])
+        else
+          lspconfig[server].setup {}
         end
       end
-
-      -- 自动设置
-      require("mason-lspconfig").setup_handlers {
-        function(server)
-          if servers[server] == nil then
-            lspconfig[server].setup {}
-          end
-        end
-      }
-    end,
-  },
+    }
+  end,
 }

@@ -1,12 +1,12 @@
 return {
-  'nvim-lualine/lualine.nvim',
-  dependencies = 'nvim-tree/nvim-web-devicons',
+  "nvim-lualine/lualine.nvim",
+  dependencies = "nvim-tree/nvim-web-devicons",
   opts = {
     options = {
       icons_enabled = true,
-      theme = 'auto',
-      component_separators = { left = '', right = ''},
-      section_separators = { left = '', right = ''},
+      theme = "auto",
+      component_separators = { left = "", right = ""},
+      section_separators = { left = "", right = ""},
       disabled_filetypes = {
         statusline = {},
         winbar = {},
@@ -21,13 +21,15 @@ return {
       }
     },
     sections = {
-      lualine_a = {'mode'},
-      lualine_b = {'branch', 'diff', 'diagnostics'},
-      lualine_c = {'filename'},
-      lualine_x = {
-        'encoding',
+      lualine_a = { "filename" },
+      lualine_b = { "branch", "diff", "diagnostics" },
+      lualine_c = {},
+
+      lualine_x = {},
+      lualine_y = {
+        "encoding",
         {
-          'fileformat',
+          "fileformat",
           icons_enabled = true,
           symbols = {
             unix = "LF",
@@ -35,19 +37,20 @@ return {
             mac  = "CR",
           }
         },
-        'filetype',
+        "filetype",
       },
-      lualine_y = {'progress'},
-      lualine_z = {"selectioncount", 'location'},
+      lualine_z = { "selectioncount", "location", "progress" },
     },
     inactive_sections = {
-      lualine_a = {},
-      lualine_b = {},
-      lualine_c = {'filename'},
-      lualine_x = {
-        'encoding',
+      lualine_a = { "filename" },
+      lualine_b = { "diff", "diagnostics" },
+      lualine_c = {},
+
+      lualine_x = {},
+      lualine_y = {
+        "encoding",
         {
-          'fileformat',
+          "fileformat",
           icons_enabled = true,
           symbols = {
             unix = "LF",
@@ -55,9 +58,8 @@ return {
             mac  = "CR",
           }
         },
-        'filetype'
+        "filetype",
       },
-      lualine_y = {},
       lualine_z = { "location" },
     },
     tabline = {},
