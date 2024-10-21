@@ -1,0 +1,58 @@
+(defsrc)
+(deflayermap (base-layer)
+  `     (tap-hold-press 200 200 `   (layer-while-held extend-layer))
+  caps  (tap-hold-press 200 200 esc lctl)
+  w     (fork _
+          (fork A-f4 _ $CSA)
+          $MET
+        )
+)
+
+(deflayermap (extend-layer)
+  ___   XX
+  lctl  lctl
+  rctl  rctl
+  caps  (tap-hold-press 200 200 caps lctl)
+  ralt  lrld
+  h     kp1
+  j     kp2
+  k     kp3
+  y     kp4
+  u     kp5
+  i     kp6
+  7     kp7
+  8     kp8
+  9     kp9
+  0     kp0
+  o     kp0
+  -     kp-
+  [     kp+
+  =     kp*
+  ]     kp/
+  .     kp.
+  bspc  bspc
+  ret   kprt
+  p     (fork up    C-up    $CTL)
+  l     (fork left  C-left  $CTL)
+  ;     (fork down  C-down  $CTL)
+  '     (fork right C-right $CTL)
+  up    pgup
+  down  pgdn
+  left  home
+  right end
+)
+
+(defvar
+  CTL   (lctl rctl)
+  SFT   (lsft rsft)
+  ALT   (lalt ralt)
+  MET   (lmet rmet)
+  CS    (lctl rctl lsft rsft)
+  CA    (lctl rctl lalt ralt)
+  AS    (lalt ralt lsft rsft)
+  CSA   (lctl rctl lalt ralt lsft rsft)
+)
+
+(defcfg
+  process-unmapped-keys yes
+)
