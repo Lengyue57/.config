@@ -7,17 +7,16 @@ set.fileencodings= "utf8,cp936,gb18030,big5"
 
 if vim.g.neovide then
   -- 设置字体
-  if vim.fn.has("win64") then
+  if vim.fn.has("win64") ~= 0 then
     set.guifont = {
-      "Iosevka Slab",
-      "IosevkaTermSlab NF",
+      "IosevkaSlab Nerd Font",
       "UbuntuMono Nerd Font",
       "Source Han Sans SC",
       ":h10"
     }
   else
     set.guifont = {
-      "Iosevka Slab",
+      "IosevkaSlab Nerd Font",
       "UbuntuMono Nerd Font",
       "Source Han Sans CN",
       ":h10"
